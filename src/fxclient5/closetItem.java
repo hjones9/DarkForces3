@@ -33,6 +33,6 @@ public class closetItem {
     
 //    @Override
 //    public String toString() {
-//        return "inventoryitem{" + "productName=" + productName + ", productDescription=" + productDescription + '}';
+//        return "username+ "            " + ;
 //    }
 }

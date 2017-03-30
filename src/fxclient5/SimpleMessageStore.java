@@ -9,6 +9,7 @@ package fxclient5;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -37,9 +38,15 @@ public class SimpleMessageStore implements MessageStore {
 
     @Override
     public void dumpAll() {
+        
+        Set<closetItem> setOfInventoryItems = closet.keySet();
     System.out.println("**Message Dump Report**");
         System.out.println("Date                      From            Message");
-        System.out.println(closet.get(item));
+        for(closetItem item : setOfInventoryItems){
+        System.out.println(item + "" + closet.get(item));
+        }
 }
-    
+   
+        
+         
 }
