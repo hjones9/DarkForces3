@@ -5,10 +5,6 @@
  */
 package fxclient5;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-
 
 /**
  *
@@ -18,12 +14,7 @@ public class MockMessageClient implements MessageClient{
 
     @Override
     public String send(String message) {
-         try {
-            Thread.sleep(5000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MockMessageClient.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+         
         return message;
 
     }

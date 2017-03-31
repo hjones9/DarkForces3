@@ -28,25 +28,22 @@ public class SimpleMessageStore implements MessageStore {
     public void store(String username, String message) {
         
         closetItem item = new closetItem(username, message);
-        
-        
+
         LocalDateTime time = LocalDateTime.now();
         closet.put(item, time);
-            
-                   
-}
+
+    }
 
     @Override
     public void dumpAll() {
-        
+
         Set<closetItem> setOfInventoryItems = closet.keySet();
-    System.out.println("**Message Dump Report**");
+        System.out.println("**Message Dump Report**");
         System.out.println("Date                      From            Message");
-        for(closetItem item : setOfInventoryItems){
-        System.out.println(item + "" + closet.get(item));
+        for (closetItem item : setOfInventoryItems) {
+            System.out.println(closet.get(item) + "" + item);
         }
-}
-   
-        
-         
+    }
+
+ 
 }

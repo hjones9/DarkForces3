@@ -61,21 +61,27 @@ public class FXClient5 extends Application {
      
         final MessageClient client = new MockMessageClient();
         final String myFriend = "Computer";
-        myMessageField.setOnKeyReleased((e)->{
-        
+        final String username = usernameTextField.textProperty().get();
+        MessageStore toPut = new SimpleMessageStore();
+
+        myMessageField.setOnKeyReleased((e) -> {
+
             if (e.getCode() == KeyCode.ENTER) {
                 if (!myMessageField.textProperty().get().isEmpty()) {
-                    textArea.appendText(usernameTextField.textProperty().get()+"> ");
+                    textArea.appendText(usernameTextField.textProperty().get() + "> ");
                     String myMessage = myMessageField.textProperty().get();
-                    textArea.appendText(myMessage+"\n");
-                    textArea.appendText(myFriend+"> ");
-                    textArea.appendText(client.send(myMessage)+"\n");
+                    textArea.appendText(myMessage + "\n");
+                    textArea.appendText(myFriend + "> ");
+                    textArea.appendText(client.send(myMessage) + "\n");
+                    toPut.store(username, myMessage);
                     myMessageField.clear();
+                    toPut.dumpAll();
+
                 }
             }
-        
-        
+
         });
+
  
         textArea.setDisable(true);
         textArea.setEditable(false);

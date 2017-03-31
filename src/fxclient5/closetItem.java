@@ -31,8 +31,8 @@ public class closetItem {
     
     }
     
-//    @Override
-//    public String toString() {
-//        return "username+ "            " + ;
-//    }
+    @Override
+    public String toString() {
+        return (username+ "         " + message) +"";
+    }
 }
