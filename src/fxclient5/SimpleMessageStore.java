@@ -31,6 +31,8 @@ public class SimpleMessageStore implements MessageStore {
 
         LocalDateTime time = LocalDateTime.now();
         closet.put(item, time);
+            System.out.println(item);
+            System.out.println(username);
 
     }
 
